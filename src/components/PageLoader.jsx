@@ -18,7 +18,7 @@ const PageLoader = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[9999] bg-gradient-to-br from-teal-50 via-blue-50 to-cyan-50 flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-[#030014] flex items-center justify-center"
         >
           <div className="text-center">
             <motion.div
@@ -27,7 +27,7 @@ const PageLoader = () => {
               transition={{ duration: 0.5 }}
               className="mb-8"
             >
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-teal-600 to-blue-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl">
+              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-[0_0_30px_rgba(0,240,255,0.3)]">
                 JC
               </div>
             </motion.div>
@@ -35,7 +35,7 @@ const PageLoader = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-2xl font-bold text-gray-900 mb-4"
+              className="text-2xl font-bold text-white mb-4"
             >
               Jahanvi Chikara
             </motion.h2>
@@ -50,7 +50,7 @@ const PageLoader = () => {
                     repeat: Infinity,
                     delay: i * 0.2,
                   }}
-                  className="w-3 h-3 bg-teal-600 rounded-full"
+                  className="w-3 h-3 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(0,240,255,0.5)]"
                 />
               ))}
             </div>
@@ -58,7 +58,7 @@ const PageLoader = () => {
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
               transition={{ duration: 2, ease: 'easeInOut' }}
-              className="mt-8 h-1 bg-gradient-to-r from-teal-600 to-blue-600 rounded-full max-w-xs mx-auto"
+              className="mt-8 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full max-w-xs mx-auto shadow-[0_0_20px_rgba(112,0,223,0.5)]"
             />
           </div>
         </motion.div>

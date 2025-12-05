@@ -25,26 +25,25 @@ const Header = () => {
   ]
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'top-4 w-[95%] max-w-7xl bg-white/90 dark:bg-black backdrop-blur-xl shadow-2xl rounded-full py-3 px-6' 
-          : 'top-0 w-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md py-5 px-4'
-      }`}
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${isScrolled
+          ? 'top-4 w-[95%] max-w-7xl glass-panel rounded-full py-3 px-6'
+          : 'top-0 w-full bg-transparent py-5 px-4'
+        }`}
     >
       <nav className="flex items-center justify-between">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="flex items-center gap-2"
           aria-label="Go to homepage"
         >
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className={`font-bold transition-all ${isScrolled ? 'text-xl' : 'text-2xl'}`}
           >
-            <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-gradient">
               Jahanvi Chikara
             </span>
           </motion.div>
@@ -54,17 +53,16 @@ const Header = () => {
         <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.to}>
-              <Link 
+              <Link
                 to={link.to}
-                className={`relative text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium ${
-                  location.pathname === link.to ? 'text-teal-600 dark:text-teal-400' : ''
-                }`}
+                className={`relative text-gray-300 hover:text-white transition-colors font-medium ${location.pathname === link.to ? 'text-white' : ''
+                  }`}
               >
                 {link.label}
                 {location.pathname === link.to && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-600 to-blue-600 rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
                   />
                 )}
               </Link>
@@ -75,14 +73,14 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none z-50"
+          className="md:hidden text-white focus:outline-none z-50"
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMobileMenuOpen}
         >
-          <motion.svg 
-            className="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
+          <motion.svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
             animate={isMobileMenuOpen ? { rotate: 90 } : { rotate: 0 }}
           >
@@ -102,13 +100,12 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className={`md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md overflow-hidden ${
-              isScrolled ? 'rounded-b-3xl mt-2' : 'border-t'
-            }`}
+            className={`md:hidden glass-panel overflow-hidden ${isScrolled ? 'rounded-b-3xl mt-2' : ''
+              }`}
           >
             <ul className="px-6 py-4 space-y-2">
               {navLinks.map((link, index) => (
-                <motion.li 
+                <motion.li
                   key={link.to}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -117,9 +114,8 @@ const Header = () => {
                   <Link
                     to={link.to}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium py-2 px-4 rounded-lg ${
-                      location.pathname === link.to ? 'text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20' : ''
-                    }`}
+                    className={`block text-gray-300 hover:text-white transition-colors font-medium py-2 px-4 rounded-lg hover:bg-white/5 ${location.pathname === link.to ? 'text-white bg-white/10' : ''
+                      }`}
                   >
                     {link.label}
                   </Link>

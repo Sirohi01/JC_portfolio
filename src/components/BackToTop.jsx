@@ -34,7 +34,7 @@ const BackToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-gradient-to-br from-teal-600 to-blue-600 text-white p-4 rounded-full shadow-2xl hover:shadow-teal-500/50 transition-all"
+          className="fixed bottom-8 right-8 z-50 bg-gradient-to-br from-cyan-500 to-purple-600 text-white p-4 rounded-full shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all border border-cyan-500/20"
           aria-label="Back to top"
         >
           <svg
